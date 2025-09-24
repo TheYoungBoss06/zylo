@@ -1,0 +1,10 @@
+var input_str = "10 + 5";
+var parts = split(input_str, " ");
+var num1Str = parts.Get(0);
+var operator = parts.Get(1);
+var num2Str = parts.Get(2);
+show.log(num1Str);
+show.log(operator);
+show.log(num2Str);
+show.log("List length: ");
+show.log(parts.Len());

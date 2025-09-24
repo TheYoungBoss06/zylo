@@ -1,0 +1,54 @@
+func main() {
+  show.log("=== CALCULADORA INTERACTIVA ZYLO ===")
+  show.log("Operaciones disponibles: +, -, *, /")
+  show.log("Escribe 'exit' para salir")
+
+  while true {
+    show.log("")
+    show.log("Ingresa la operación (+, -, *, /) o 'exit':")
+    var op = read.line()
+
+    if op == "exit" {
+      show.log("¡Hasta luego!")
+      break
+    }
+
+    if op != "+" && op != "-" && op != "*" && op != "/" {
+      show.log("Operación no válida. Intenta de nuevo.")
+      continue
+    }
+
+    show.log("Ingresa el primer número:")
+    var num1_str = read.line()
+    var num1 = to_number(num1_str)
+    if num1 == null {
+      show.log("Número no válido. Intenta de nuevo.")
+      continue
+    }
+
+    show.log("Ingresa el segundo número:")
+    var num2_str = read.line()
+    var num2 = to_number(num2_str)
+    if num2 == null {
+      show.log("Número no válido. Intenta de nuevo.")
+      continue
+    }
+
+    var result
+    if op == "+" {
+      result = add(num1, num2)
+    } else if op == "-" {
+      result = subtract(num1, num2)
+    } else if op == "*" {
+      result = multiply(num1, num2)
+    } else if op == "/" {
+      if num2 == 0 {
+        show.log("Error: No se puede dividir por cero.")
+        continue
+      }
+      result = divide(num1, num2)
+    }
+
+    show.log("Resultado: " + string(num1) + " " + op + " " + string(num2) + " = " + string(result))
+  }
+}

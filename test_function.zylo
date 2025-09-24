@@ -1,0 +1,8 @@
+func test() {
+    var arr = split("hello world", " ")
+    show.log(arr)
+}
+
+func main() {
+    test()
+}

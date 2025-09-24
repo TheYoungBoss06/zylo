@@ -1,0 +1,4 @@
+func main() {
+  var h = { "key": "value" }
+  show.log(h.get("key"))
+}

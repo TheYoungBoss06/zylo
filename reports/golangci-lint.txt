@@ -1,0 +1,51 @@
+level=error msg="[linters_context] typechecking error: : found packages tests (brutal_test.go) and main (debug_generated.go) in d:\\zylo\\zylo\\zylo-compiler\\internal\\tests"
+level=error msg="[linters_context] typechecking error: d:\\zylo\\zylo\\zylo-compiler\\internal\\tests\\debug_generated.go:52:16: expected '==', found '='"
+level=error msg="[linters_context] typechecking error: d:\\zylo\\zylo\\zylo-compiler\\internal\\tests\\debug_generated.go:56:16: expected '==', found '='"
+runtime\runtime.go:237:12: Error return value of `fmt.Scanln` is not checked (errcheck)
+	fmt.Scanln(&input)
+	          ^
+runtime\runtime.go:244:11: Error return value of `fmt.Scanf` is not checked (errcheck)
+	fmt.Scanf("%d", &input)
+	         ^
+internal\sema\sema_test.go:169:6: func `createTestProgram` is unused (unused)
+func createTestProgram(statements ...ast.Statement) *ast.Program {
+     ^
+internal\sema\sema_test.go:175:6: func `createVarStatement` is unused (unused)
+func createVarStatement(name string, value ast.Expression) *ast.VarStatement {
+     ^
+internal\sema\sema_test.go:188:6: func `createIdentifier` is unused (unused)
+func createIdentifier(name string) *ast.Identifier {
+     ^
+internal\parser\parser.go:21:3: field `recursionDepth` is unused (unused)
+		recursionDepth    int
+		^
+internal\parser\parser.go:186:19: func `(*Parser).enterRecursion` is unused (unused)
+	func (p *Parser) enterRecursion() error {
+	                 ^
+internal\parser\parser.go:194:19: func `(*Parser).exitRecursion` is unused (unused)
+	func (p *Parser) exitRecursion() {
+	                 ^
+internal\parser\parser.go:255:19: func `(*Parser).parseElifStatement` is unused (unused)
+	func (p *Parser) parseElifStatement() ast.Statement {
+	                 ^
+internal\parser\parser.go:676:19: func `(*Parser).parseBlockExpression` is unused (unused)
+	func (p *Parser) parseBlockExpression() ast.Expression {
+	                 ^
+runtime\runtime.go:6:2: SA1019: "io/ioutil" has been deprecated since Go 1.19: As of Go 1.16, the same functionality is now provided by package [io] or package [os], and those implementations should be preferred in new code. See the specific function documentation for details. (staticcheck)
+	"io/ioutil"
+	^
+internal\evaluator\evaluator.go:665:7: SA4006: this value of `ok` is never used (staticcheck)
+			if _, ok := result.(*ContinueValue); ok {
+			   ^
+internal\evaluator\evaluator.go:682:7: SA4006: this value of `ok` is never used (staticcheck)
+			if _, ok := result.(*ContinueValue); ok {
+			   ^
+internal\codegen\codegen.go:184:9: SA9003: empty branch (staticcheck)
+	} else {
+	       ^
+internal\lexer\lexer.go:176:2: SA9003: empty branch (staticcheck)
+	if nestingLevel > 0 {
+	^
+internal\parser\parser.go:321:5: SA9003: empty branch (staticcheck)
+				if p.expectPeek(lexer.IDENTIFIER) {
+				^

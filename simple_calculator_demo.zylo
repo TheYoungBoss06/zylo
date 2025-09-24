@@ -1,0 +1,99 @@
+// Calculadora Simple con Import y Utilidades
+// Demuestra import, bucles, if-else-elif, return
+
+import zyloruntime
+
+func calculate_simple() {
+    show.log("=== CALCULADORA SIMPLE ===")
+
+    // Lista de operaciones disponibles
+    var operations = []
+    operations.Append("+")
+    operations.Append("-")
+    operations.Append("*")
+    operations.Append("/")
+
+    show.log("Operaciones disponibles:")
+    var i = 0
+    while i < operations.Len() {
+        show.log("  " + operations.Get(i))
+        i = i + 1
+    }
+
+    // Ejemplo de cálculo
+    var num1 = 10
+    var num2 = 5
+    var operator = "+"
+
+    var result
+    if operator == "+" {
+        result = num1 + num2
+    } else if operator == "-" {
+        result = num1 - num2
+    } else if operator == "*" {
+        result = num1 * num2
+    } else if operator == "/" {
+        if num2 != 0 {
+            result = num1 / num2
+        } else {
+            show.log("Error: División por cero")
+            return
+        }
+    } else {
+        show.log("Operador no válido")
+        return
+    }
+
+    show.log("Resultado: " + string(num1) + " " + operator + " " + string(num2) + " = " + string(result))
+
+    // Demostrar uso de string splitting
+    var expression = "20 * 4"
+    var parts = zyloruntime.Split(expression, " ")
+    if parts.Len() >= 3 {
+        var n1 = to_number(parts.Get(0))
+        var op = parts.Get(1)
+        var n2 = to_number(parts.Get(2))
+
+        if n1 != null && n2 != null {
+            show.log("Expresión parseada: " + string(n1) + " " + op + " " + string(n2))
+        }
+    }
+
+    return result
+}
+
+func factorial_demo(n) {
+    if n <= 1 {
+        return 1
+    } else {
+        return n * factorial_demo(n - 1)
+    }
+}
+
+func main() {
+    var result = calculate_simple()
+    show.log("Resultado de calculate_simple: " + string(result))
+
+    // Demostrar factorial
+    var fact_result = factorial_demo(5)
+    show.log("Factorial de 5: " + string(fact_result))
+
+    // Demostrar lista
+    var numbers = []
+    var j = 1
+    while j <= 5 {
+        numbers.Append(j)
+        j = j + 1
+    }
+
+    show.log("Lista creada:")
+    var k = 0
+    while k < numbers.Len() {
+        show.log("  Elemento " + string(k) + ": " + string(numbers.Get(k)))
+        k = k + 1
+    }
+
+    show.log("Longitud de la lista: " + string(numbers.Len()))
+
+    return 0
+}

@@ -1,0 +1,7 @@
+var str = "hello world"
+var parts = zyloruntime.Split(str, " ")
+show.log(parts.Get(0))
+show.log(parts.Get(1))
+show.log(parts.Len())
+parts.Append("test")
+show.log(parts.Len())

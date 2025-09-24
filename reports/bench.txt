@@ -1,0 +1,7 @@
+goos: windows
+goarch: amd64
+pkg: github.com/zylo-lang/zylo/internal/lexer
+cpu: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+BenchmarkLex-4   	  210261	      5277 ns/op	    1040 B/op	      51 allocs/op
+PASS
+ok  	github.com/zylo-lang/zylo/internal/lexer	1.192s

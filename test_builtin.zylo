@@ -1,0 +1,12 @@
+var num_str = "123"
+var converted = to_number(num_str)
+show.log("Converted: " + string(converted))
+
+var result = add(5, 3)
+show.log("5 + 3 = " + string(result))
+
+var list = []
+list.Append("hello")
+list.Append("world")
+show.log("List length: " + string(list.Len()))
+show.log("First item: " + list.Get(0))

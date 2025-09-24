@@ -1,0 +1,5 @@
+func main() Int {
+    var a: Float = 10;
+    show.log("Hello");
+    return 0;
+}

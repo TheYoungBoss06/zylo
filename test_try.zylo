@@ -1,0 +1,5 @@
+try(func() {
+    show.log("Executing function block");
+}, func(error) {
+    show.log("Error: " + string(error));
+});

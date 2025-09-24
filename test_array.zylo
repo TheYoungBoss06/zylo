@@ -1,0 +1,2 @@
+var arr = split("hello world", " ")
+show.log(arr[0])

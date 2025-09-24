@@ -1,0 +1,87 @@
+class Calculator {
+  var name = "Calculadora Zylo"
+
+  func init(name) {
+    this.name = name
+  }
+
+  func add(a, b) {
+    return a + b
+  }
+
+  func subtract(a, b) {
+    return a - b
+  }
+
+  func multiply(a, b) {
+    return a * b
+  }
+
+  func divide(a, b) {
+    if b == 0 {
+      show.log("Error: División por cero")
+      return null
+    }
+    return a / b
+  }
+
+  func calculate(op, a, b) {
+    if op == "+" {
+      return this.add(a, b)
+    } else if op == "-" {
+      return this.subtract(a, b)
+    } else if op == "*" {
+      return this.multiply(a, b)
+    } else if op == "/" {
+      return this.divide(a, b)
+    } else {
+      show.log("Operación no válida")
+      return null
+    }
+  }
+}
+
+func main() {
+  var calc = Calculator("Calculadora Interactiva Zylo")
+
+  show.log("=== " + calc.name + " ===")
+  show.log("Operaciones disponibles: +, -, *, /")
+  show.log("Escribe 'exit' para salir")
+
+  while true {
+    show.log("")
+    show.log("Ingresa la operación (+, -, *, /) o 'exit':")
+    var op = read.line()
+
+    if op == "exit" {
+      show.log("¡Hasta luego!")
+      break
+    }
+
+    if op != "+" && op != "-" && op != "*" && op != "/" {
+      show.log("Operación no válida. Intenta de nuevo.")
+      continue
+    }
+
+    show.log("Ingresa el primer número:")
+    var num1_str = read.line()
+    var num1 = to_number(num1_str)
+    if num1 == null {
+      show.log("Número no válido. Intenta de nuevo.")
+      continue
+    }
+
+    show.log("Ingresa el segundo número:")
+    var num2_str = read.line()
+    var num2 = to_number(num2_str)
+    if num2 == null {
+      show.log("Número no válido. Intenta de nuevo.")
+      continue
+    }
+
+    var result = calc.calculate(op, num1, num2)
+    if result != null {
+      show.log("Resultado: " + string(num1) + " " + op + " " + string(num2) + " = " + string(result))
+    }
+  }
+}

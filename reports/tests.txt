@@ -1,0 +1,150 @@
+# github.com/zylo-lang/zylo/internal/tests
+found packages tests (brutal_test.go) and main (debug_generated.go) in d:\zylo\zylo\zylo-compiler\internal\tests
+FAIL	github.com/zylo-lang/zylo/internal/tests [setup failed]
+?   	github.com/zylo-lang/zylo	[no test files]
+?   	github.com/zylo-lang/zylo/cmd/zylo	[no test files]
+?   	github.com/zylo-lang/zylo/internal/ast	[no test files]
+=== RUN   TestHelloWorld
+    codegen_test.go:64: Go build failed: exit status 1
+        Output:
+        # command-line-arguments
+        C:\Users\Android\AppData\Local\Temp\zylo_codegen_test3451190695\main.go:4:2: "fmt" imported and not used
+--- FAIL: TestHelloWorld (0.45s)
+FAIL
+FAIL	github.com/zylo-lang/zylo/internal/codegen	0.466s
+?   	github.com/zylo-lang/zylo/internal/evaluator	[no test files]
+=== RUN   TestNextToken
+=== RUN   TestNextToken/Test_0:__
+=== RUN   TestNextToken/Test_1:_var
+=== RUN   TestNextToken/Test_2:_five
+=== RUN   TestNextToken/Test_3:_=
+=== RUN   TestNextToken/Test_4:_5
+=== RUN   TestNextToken/Test_5:_;
+=== RUN   TestNextToken/Test_6:__
+=== RUN   TestNextToken/Test_7:_const
+=== RUN   TestNextToken/Test_8:_ten
+=== RUN   TestNextToken/Test_9:_=
+=== RUN   TestNextToken/Test_10:_10.5
+=== RUN   TestNextToken/Test_11:_;
+=== RUN   TestNextToken/Test_12:__
+=== RUN   TestNextToken/Test_13:__
+=== RUN   TestNextToken/Test_14:_func
+=== RUN   TestNextToken/Test_15:_add
+=== RUN   TestNextToken/Test_16:_(
+=== RUN   TestNextToken/Test_17:_x
+=== RUN   TestNextToken/Test_18:_,
+=== RUN   TestNextToken/Test_19:_y
+=== RUN   TestNextToken/Test_20:_)
+=== RUN   TestNextToken/Test_21:_{
+=== RUN   TestNextToken/Test_22:__
+=== RUN   TestNextToken/Test_23:_return
+=== RUN   TestNextToken/Test_24:_x
+=== RUN   TestNextToken/Test_25:_+
+=== RUN   TestNextToken/Test_26:_y
+=== RUN   TestNextToken/Test_27:_;
+=== RUN   TestNextToken/Test_28:__
+=== RUN   TestNextToken/Test_29:_}
+=== RUN   TestNextToken/Test_30:__
+=== RUN   TestNextToken/Test_31:__
+=== RUN   TestNextToken/Test_32:_"hello"
+=== RUN   TestNextToken/Test_33:__
+=== RUN   TestNextToken/Test_34:_'world'
+=== RUN   TestNextToken/Test_35:__
+=== RUN   TestNextToken/Test_36:_"""_multi_line_"""
+=== RUN   TestNextToken/Test_37:__
+=== RUN   TestNextToken/Test_38:__
+=== RUN   TestNextToken/Test_39:_"linea1\nlinea2"
+=== RUN   TestNextToken/Test_40:__
+=== RUN   TestNextToken/Test_41:_"Unicode:_\u0041\u0042\u0043"
+=== RUN   TestNextToken/Test_42:__
+=== RUN   TestNextToken/Test_43:_
+--- PASS: TestNextToken (0.00s)
+    --- PASS: TestNextToken/Test_0:__ (0.00s)
+    --- PASS: TestNextToken/Test_1:_var (0.00s)
+    --- PASS: TestNextToken/Test_2:_five (0.00s)
+    --- PASS: TestNextToken/Test_3:_= (0.00s)
+    --- PASS: TestNextToken/Test_4:_5 (0.00s)
+    --- PASS: TestNextToken/Test_5:_; (0.00s)
+    --- PASS: TestNextToken/Test_6:__ (0.00s)
+    --- PASS: TestNextToken/Test_7:_const (0.00s)
+    --- PASS: TestNextToken/Test_8:_ten (0.00s)
+    --- PASS: TestNextToken/Test_9:_= (0.00s)
+    --- PASS: TestNextToken/Test_10:_10.5 (0.00s)
+    --- PASS: TestNextToken/Test_11:_; (0.00s)
+    --- PASS: TestNextToken/Test_12:__ (0.00s)
+    --- PASS: TestNextToken/Test_13:__ (0.00s)
+    --- PASS: TestNextToken/Test_14:_func (0.00s)
+    --- PASS: TestNextToken/Test_15:_add (0.00s)
+    --- PASS: TestNextToken/Test_16:_( (0.00s)
+    --- PASS: TestNextToken/Test_17:_x (0.00s)
+    --- PASS: TestNextToken/Test_18:_, (0.00s)
+    --- PASS: TestNextToken/Test_19:_y (0.00s)
+    --- PASS: TestNextToken/Test_20:_) (0.00s)
+    --- PASS: TestNextToken/Test_21:_{ (0.00s)
+    --- PASS: TestNextToken/Test_22:__ (0.00s)
+    --- PASS: TestNextToken/Test_23:_return (0.00s)
+    --- PASS: TestNextToken/Test_24:_x (0.00s)
+    --- PASS: TestNextToken/Test_25:_+ (0.00s)
+    --- PASS: TestNextToken/Test_26:_y (0.00s)
+    --- PASS: TestNextToken/Test_27:_; (0.00s)
+    --- PASS: TestNextToken/Test_28:__ (0.00s)
+    --- PASS: TestNextToken/Test_29:_} (0.00s)
+    --- PASS: TestNextToken/Test_30:__ (0.00s)
+    --- PASS: TestNextToken/Test_31:__ (0.00s)
+    --- PASS: TestNextToken/Test_32:_"hello" (0.00s)
+    --- PASS: TestNextToken/Test_33:__ (0.00s)
+    --- PASS: TestNextToken/Test_34:_'world' (0.00s)
+    --- PASS: TestNextToken/Test_35:__ (0.00s)
+    --- PASS: TestNextToken/Test_36:_"""_multi_line_""" (0.00s)
+    --- PASS: TestNextToken/Test_37:__ (0.00s)
+    --- PASS: TestNextToken/Test_38:__ (0.00s)
+    --- PASS: TestNextToken/Test_39:_"linea1\nlinea2" (0.00s)
+    --- PASS: TestNextToken/Test_40:__ (0.00s)
+    --- PASS: TestNextToken/Test_41:_"Unicode:_\u0041\u0042\u0043" (0.00s)
+    --- PASS: TestNextToken/Test_42:__ (0.00s)
+    --- PASS: TestNextToken/Test_43:_ (0.00s)
+PASS
+ok  	github.com/zylo-lang/zylo/internal/lexer	0.015s
+=== RUN   TestBlockParsing
+    block_test.go:24: Program statements: 1
+    block_test.go:26: Statement 0: *ast.FuncStatement
+    block_test.go:48: Function body statement 0: *ast.VarStatement
+    block_test.go:48: Function body statement 1: *ast.ExpressionStatement
+--- PASS: TestBlockParsing (0.00s)
+=== RUN   TestVarStatements
+--- PASS: TestVarStatements (0.00s)
+=== RUN   TestIfStatement
+--- PASS: TestIfStatement (0.00s)
+=== RUN   TestIfElseStatement
+--- PASS: TestIfElseStatement (0.00s)
+=== RUN   TestExpressionStatement
+--- PASS: TestExpressionStatement (0.00s)
+PASS
+ok  	github.com/zylo-lang/zylo/internal/parser	0.017s
+=== RUN   TestSemanticAnalysis
+=== RUN   TestSemanticAnalysis/Simple_variable_declaration
+=== RUN   TestSemanticAnalysis/Multiple_variable_declarations
+=== RUN   TestSemanticAnalysis/Undeclared_identifier_usage
+=== RUN   TestSemanticAnalysis/Shadowing_(optional,_current_implementation_allows_it)
+=== RUN   TestSemanticAnalysis/Function_declaration_and_usage
+    sema_test.go:150: Semantic analysis failed: expected 0 errors, got 1. Errors: [identifier not found: print]
+=== RUN   TestSemanticAnalysis/Undeclared_function_call
+=== RUN   TestSemanticAnalysis/Function_with_parameters_and_body
+=== RUN   TestSemanticAnalysis/Nested_scopes
+    sema_test.go:150: Semantic analysis failed: expected 0 errors, got 4. Errors: [identifier not found: print identifier not found: print identifier not found: print identifier not found: print]
+=== RUN   TestSemanticAnalysis/Undeclared_variable_in_nested_scope
+    sema_test.go:150: Semantic analysis failed: expected 1 errors, got 2. Errors: [identifier not found: print identifier not found: undeclaredVar]
+--- FAIL: TestSemanticAnalysis (0.00s)
+    --- PASS: TestSemanticAnalysis/Simple_variable_declaration (0.00s)
+    --- PASS: TestSemanticAnalysis/Multiple_variable_declarations (0.00s)
+    --- PASS: TestSemanticAnalysis/Undeclared_identifier_usage (0.00s)
+    --- PASS: TestSemanticAnalysis/Shadowing_(optional,_current_implementation_allows_it) (0.00s)
+    --- FAIL: TestSemanticAnalysis/Function_declaration_and_usage (0.00s)
+    --- PASS: TestSemanticAnalysis/Undeclared_function_call (0.00s)
+    --- PASS: TestSemanticAnalysis/Function_with_parameters_and_body (0.00s)
+    --- FAIL: TestSemanticAnalysis/Nested_scopes (0.00s)
+    --- FAIL: TestSemanticAnalysis/Undeclared_variable_in_nested_scope (0.00s)
+FAIL
+FAIL	github.com/zylo-lang/zylo/internal/sema	0.014s
+?   	github.com/zylo-lang/zylo/runtime	[no test files]
+FAIL

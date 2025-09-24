@@ -1,0 +1,51 @@
+class Persona {
+    var nombre
+    var edad
+
+    func init(n, e) {
+        this.nombre = n
+        this.edad = e
+    }
+
+    func saludar() {
+        show.log("Hola, soy " + this.nombre + " y tengo " + this.edad + " años.")
+    }
+}
+
+func factorial(n) {
+    if n <= 1 {
+        return 1
+    } elif n == 2 {
+        return 2
+    } else {
+        return n * factorial(n - 1)
+    }
+}
+
+func main() {
+    var p = Persona("Wilson", 25)
+    p.saludar()
+
+    show.log("Factorial de 5: " + factorial(5))
+
+    var i = 0
+    while i < 5 {
+        if i == 2 {
+            show.log("Encontré el número 2, saltando…")
+            i = i + 1
+            continue
+        }
+        show.log("i = " + i)
+        i = i + 1
+    }
+
+    for x in [1,2,3,4,5] {
+        show.log("Iterando en lista: " + x)
+    }
+
+    try {
+        var z = 10 / 0
+    } catch err {
+        show.log("Error atrapado: " + err)
+    }
+}

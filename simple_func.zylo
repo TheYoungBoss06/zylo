@@ -1,0 +1,6 @@
+func sumar(a, b) {
+    return a + b
+}
+
+var result = sumar(5, 3)
+show.log("Resultado: " + string(result))

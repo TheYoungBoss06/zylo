@@ -1,0 +1,8 @@
+import zyloruntime
+
+func main() {
+    var arr = zyloruntime.Split("hello world", " ")
+    show.log(arr.Get(0))
+    show.log(arr.Get(1))
+    show.log("Import test successful!")
+}

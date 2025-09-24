@@ -1,0 +1,38 @@
+// Simple calculator without type annotations
+func calculate(input_str) {
+    var parts = zyloruntime.Split(input_str, " ")
+
+    var num1Str = parts.Get(0)
+    var operator = parts.Get(1)
+    var num2Str = parts.Get(2)
+
+    var num1 = to_number(num1Str)
+    var num2 = to_number(num2Str)
+
+    if num1 == null || num2 == null {
+        show.log("Invalid numbers provided.")
+        return
+    }
+
+    var result
+
+    if operator == "+" {
+        result = num1 + num2
+    } else if operator == "-" {
+        result = num1 - num2
+    } else if operator == "*" {
+        result = num1 * num2
+    } else if operator == "/" {
+        result = num1 / num2
+    } else {
+        show.log("Invalid operator. Supported operators are +, -, *, /")
+        return
+    }
+
+    show.log("Result: " + string(result))
+}
+
+func main() {
+    calculate("10 + 5")
+    calculate("20 - 7")
+}

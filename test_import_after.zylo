@@ -1,0 +1,3 @@
+var x = 5;
+import zyloruntime;
+show.log("Import successful!");

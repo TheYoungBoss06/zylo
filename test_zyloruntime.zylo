@@ -1,0 +1,7 @@
+var input_str = "20 - 7";
+var parts = zyloruntime.Split(input_str, " ");
+show.log(parts.Get(0));
+show.log(parts.Get(1));
+show.log(parts.Get(2));
+show.log("List length: ");
+show.log(parts.Len());

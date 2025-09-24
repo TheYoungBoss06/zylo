@@ -1,0 +1,3 @@
+var input_str = "10 + 5";
+var parts = split(input_str, " ");
+show.log(parts);

@@ -1,0 +1,36 @@
+import zyloruntime
+
+func calculate(input_str: String) {
+    // Usar zyloruntime.Split devuelve List
+    var parts: List = zyloruntime.Split(input_str, " ")
+
+    if len(parts) != 3 {        // ✅ usa len() para longitud
+        show.log("Invalid input format. Please use 'number operator number'.")
+        return
+    }
+
+    var num1: Float = to_number(parts.Get(0))
+    var operator: String = parts.Get(1)
+    var num2: Float = to_number(parts.Get(2))
+
+    if num1 == null || num2 == null {
+        show.log("Invalid numbers provided.")
+        return
+    }
+
+    var result: Float
+    if operator == "+" {
+        result = add(num1, num2)
+    } else if operator == "-" {
+        result = subtract(num1, num2)
+    } else if operator == "*" {
+        result = multiply(num1, num2)
+    } else if operator == "/" {
+        result = divide(num1, num2)
+    } else {
+        show.log("Invalid operator. Supported operators are +, -, *, /")
+        return
+    }
+
+    show.log("Result: " + string(result))
+}

@@ -1,0 +1,36 @@
+func main() {
+    show.log("=== Calculator Test (sin input) ===");
+
+    // Simular opción del usuario
+    var opcion = "1";
+
+    if opcion == "1" {
+        show.log("Has elegido SUMA");
+
+        // Valores fijos para testing
+        var num1 = 10;
+        var num2 = 5;
+
+        var resultado = num1 + num2;
+        show.log("Resultado calculado correctamente");
+
+    } else {
+        if opcion == "2" {
+            show.log("Has elegido RESTA");
+
+            // Valores fijos para testing
+            var num1 = 10;
+            var num2 = 5;
+
+            var resultado = num1 - num2;
+            show.log("Resultado calculado correctamente");
+
+        } else {
+            show.log("Opción no válida. Por favor elige 1 o 2.");
+        }
+    }
+
+    show.log("¡Gracias por usar la Calculadora Zylo!");
+    show.log("=== Fin del test ===");
+    return 0;
+}

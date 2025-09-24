@@ -1,0 +1,44 @@
+// Función principal
+func main() {
+    var history = []
+    var running = true
+
+    show_menu()
+
+    while running {
+        show.log("")
+        show.log("Ingrese operación (ej: 10 + 5) o comando:")
+
+        var input = "15 * 3"  // Simulación de entrada
+
+        if input == "q" {
+            running = false
+            show.log("¡Gracias por usar la Calculadora Zylo!")
+            return
+        } else if input == "h" {
+            show_history(history)
+        } else if input == "menu" {
+            show_menu()
+        } else {
+            var parts = split(input, " ")
+            if parts.Len() < 3 {
+                show.log("Error: Formato incorrecto")
+            } else {
+                var num1 = validate_number(parts.Get(0))
+                var operator = parts.Get(1)
+                var num2 = validate_number(parts.Get(2))
+
+                if num1 != null && num2 != null {
+                    var result = calculate_operation(num1, operator, num2)
+                    if result != null {
+                        var operation_str = string(num1) + " " + operator + " " + string(num2) + " = " + string(result)
+                        history.Append(operation_str)
+                        show.log("Resultado: " + operation_str)
+                    }
+                }
+            }
+        }
+    }
+
+    show.log("Total de operaciones realizadas: " + string(history.Len()))
+}

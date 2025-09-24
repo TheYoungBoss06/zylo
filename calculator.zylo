@@ -1,0 +1,8 @@
+func main() {
+  var a = 10
+  var b = 5
+  show.log("Addition: " + string(a + b))
+  show.log("Subtraction: " + string(a - b))
+  show.log("Multiplication: " + string(a * b))
+  show.log("Division: " + string(a / b))
+}

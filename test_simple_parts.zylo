@@ -1,0 +1,11 @@
+var x = 5
+
+class Test {
+    var y = 10
+}
+
+func test() {
+    return x + 1
+}
+
+show.log("done")

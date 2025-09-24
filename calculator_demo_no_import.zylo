@@ -1,0 +1,105 @@
+// Calculadora Demo sin Import
+// Demuestra bucles, if-else-elif, return y utilidades
+
+func calculate_simple() {
+    show.log("=== CALCULADORA SIMPLE ===")
+
+    // Lista de operaciones disponibles
+    var operations = []
+    operations.Append("+")
+    operations.Append("-")
+    operations.Append("*")
+    operations.Append("/")
+
+    show.log("Operaciones disponibles:")
+    for op in operations {
+        show.log("  " + op)
+    }
+
+    // Ejemplo de cálculo
+    var num1 = 10
+    var num2 = 5
+    var operator = "+"
+
+    var result
+    if operator == "+" {
+        result = num1 + num2
+        show.log("Realizando suma")
+    } else if operator == "-" {
+        result = num1 - num2
+        show.log("Realizando resta")
+    } else if operator == "*" {
+        result = num1 * num2
+        show.log("Realizando multiplicación")
+    } else if operator == "/" {
+        if num2 != 0 {
+            result = num1 / num2
+            show.log("Realizando división")
+        } else {
+            show.log("Error: División por cero")
+            return nil
+        }
+    } else {
+        show.log("Operador no válido")
+        return nil
+    }
+
+    show.log("Resultado: " + string(num1) + " " + operator + " " + string(num2) + " = " + string(result))
+    return result
+}
+
+func factorial_demo(n) {
+    if n <= 1 {
+        return 1
+    } else {
+        return n * factorial_demo(n - 1)
+    }
+}
+
+func demonstrate_lists() {
+    show.log("=== DEMOSTRACIÓN DE LISTAS ===")
+
+    var numbers = []
+    var j = 1
+    while j <= 5 {
+        numbers.Append(j)
+        j = j + 1
+    }
+
+    show.log("Lista creada:")
+    for num in numbers {
+        show.log("  Elemento: " + string(num))
+    }
+
+    show.log("Longitud de la lista: " + string(numbers.Len()))
+    return numbers.Len()
+}
+
+func main() {
+    show.log("¡Bienvenido a la Calculadora Demo de Zylo!")
+
+    var calc_result = calculate_simple()
+    if calc_result != nil {
+        show.log("Resultado del cálculo: " + string(calc_result))
+    }
+
+    // Demostrar factorial
+    var fact_result = factorial_demo(5)
+    show.log("Factorial de 5: " + string(fact_result))
+
+    // Demostrar listas
+    var list_length = demonstrate_lists()
+    show.log("Longitud final de la lista: " + string(list_length))
+
+    // Demostrar conversión de tipos
+    var num_str = "123"
+    var converted = to_number(num_str)
+    if converted != nil {
+        show.log("Conversión exitosa: '" + num_str + "' -> " + string(converted))
+    } else {
+        show.log("Error en conversión")
+    }
+
+    show.log("¡Demo completado exitosamente!")
+    return 0
+}

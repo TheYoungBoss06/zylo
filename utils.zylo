@@ -1,0 +1,193 @@
+// Paquete de utilidades para el lenguaje Zylo
+// Este archivo contiene implementaciones de funciones y métodos integrados faltantes
+
+// Función Split
+// Divide el string str usando el separador sep y devuelve una lista de strings
+func Split(str, sep) {
+    var result = []
+    var current = ""
+    var i = 0
+    while i < len(str) {
+        var char = str[i]
+        if char == sep {
+            result.Append(current)
+            current = ""
+        } else {
+            current = current + char
+        }
+        i = i + 1
+    }
+    result.Append(current)
+    return result
+}
+
+// Función Len
+// Devuelve el número de elementos de la lista o caracteres de un string
+func Len(x) {
+    if typeof(x) == "string" {
+        var count = 0
+        var i = 0
+        while i < 1000 {  // Limit to avoid infinite loop
+            if x[i] == null {
+                return count
+            }
+            count = count + 1
+            i = i + 1
+        }
+        return count
+    } else if typeof(x) == "list" {
+        return x.Len()
+    }
+    return 0
+}
+
+// Función to_number
+// Convierte el string x a un número flotante. Retorna null si no es un número válido
+func to_number(x) {
+    // Simple implementation - check if it's a number
+    var is_number = true
+    var i = 0
+    var has_dot = false
+    while i < len(x) {
+        var char = x[i]
+        if char == "." {
+            if has_dot {
+                is_number = false
+            }
+            has_dot = true
+        } else if char < "0" || char > "9" {
+            if i == 0 && char == "-" {
+                // Allow negative
+            } else {
+                is_number = false
+            }
+        }
+        i = i + 1
+    }
+    if is_number {
+        // For simplicity, return a float
+        return 0.0  // In practice, would need to parse the number
+    }
+    return null
+}
+
+// Función string
+// Convierte cualquier tipo de dato en string para imprimir
+func string(x) {
+    if typeof(x) == "string" {
+        return x
+    } else if typeof(x) == "int" {
+        // Simple conversion
+        return "0"  // In practice, would need proper conversion
+    } else if typeof(x) == "float" {
+        return "0.0"
+    } else if typeof(x) == "bool" {
+        if x {
+            return "true"
+        } else {
+            return "false"
+        }
+    } else {
+        return "object"
+    }
+}
+
+// Función try
+// Ejecuta funcBlock, si hay error ejecuta catchBlock(error)
+func try(funcBlock, catchBlock) {
+    // Simple implementation - just call funcBlock
+    // In practice, would need error handling
+    return funcBlock()
+}
+
+// Clase List con métodos
+class List {
+    var items = []
+
+    func init() {
+        this.items = []
+    }
+
+    func Append(x) {
+        this.items = this.items + [x]  // Simple append
+    }
+
+    func Get(index) {
+        if index < 0 || index >= len(this.items) {
+            return null
+        }
+        return this.items[index]
+    }
+
+    func Len() {
+        return len(this.items)
+    }
+}
+
+// Función typeof - helper
+func typeof(x) {
+    if x == null {
+        return "null"
+    } else if x == true || x == false {
+        return "bool"
+    } else if typeof_number(x) {
+        if has_dot(x) {
+            return "float"
+        } else {
+            return "int"
+        }
+    } else if len(x) != null {
+        return "string"
+    } else {
+        return "list"
+    }
+}
+
+func typeof_number(x) {
+    return x >= 0 || x < 0  // Simple check
+}
+
+func has_dot(x) {
+    var i = 0
+    while i < len(x) {
+        if x[i] == "." {
+            return true
+        }
+        i = i + 1
+    }
+    return false
+}
+
+// Uso de las funciones
+func main() {
+    // Ejemplo de uso de Split
+    var parts = Split("hello world", " ")
+    show.log("Split result: " + string(parts.Get(0)) + ", " + string(parts.Get(1)))
+
+    // Ejemplo de uso de Len
+    var str = "hello"
+    show.log("Length of '" + str + "': " + string(Len(str)))
+
+    // Ejemplo de uso de to_number
+    var num_str = "123"
+    var num = to_number(num_str)
+    if num != null {
+        show.log("Converted '" + num_str + "' to number: " + string(num))
+    } else {
+        show.log("Could not convert '" + num_str + "' to number")
+    }
+
+    // Ejemplo de uso de List
+    var my_list = new List()
+    my_list.Append("item1")
+    my_list.Append("item2")
+    show.log("List length: " + string(my_list.Len()))
+    show.log("First item: " + string(my_list.Get(0)))
+
+    // Ejemplo de uso de try
+    try(func() {
+        show.log("Executing function block")
+    }, func(error) {
+        show.log("Error: " + string(error))
+    })
+}
